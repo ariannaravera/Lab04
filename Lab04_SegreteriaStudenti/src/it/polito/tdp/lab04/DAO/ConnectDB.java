@@ -6,15 +6,14 @@ import java.sql.SQLException;
 
 public class ConnectDB {
 
-	static private final String jdbcUrl = "jdbc:mysql://localhost/iscritticorsi?user=root";
-	static private Connection connection = null;
+	static private final String jdbcUrl = "jdbc:mysql://localhost/iscritticorsi?user=root&password=arianna1997&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC";
 
 	public static Connection getConnection() {
 
 		try {
-			if (connection == null) {
-				connection = DriverManager.getConnection(jdbcUrl);
-			}
+			Connection connection = null;
+			connection = DriverManager.getConnection(jdbcUrl);
+
 			return connection;
 
 		} catch (SQLException e) {
